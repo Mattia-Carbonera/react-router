@@ -2,6 +2,7 @@
 main h1 {
   text-align: center;
 }
+
 /* ---- */
 nav {
   display: flex;
@@ -17,4 +18,31 @@ ul {
 
 ul > li {
   margin: 0 1rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-post {
+  width: 250px;
+  height: 400px;
+  padding: 0.5rem;
+  margin: 1rem;
+
+  border: 1px solid gray;
+  border-radius: 10px;
+
+  background-color: lightgray;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
