@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -6,17 +6,23 @@ export default function Navbar() {
       <ul>
         <li>
           <button className="btn btn-dark">
-            <Link to={"/"}>Home Page</Link>
+            <NavLink to={"/"} style={{ textDecoration: "none" }}>
+              Home Page
+            </NavLink>
           </button>
         </li>
         <li>
           <button className="btn btn-dark">
-            <Link to={"/about"}>About Us</Link>
+            <NavLink to={"/about"} style={{ textDecoration: "none" }}>
+              About Us
+            </NavLink>
           </button>
         </li>
         <li>
           <button className="btn btn-dark">
-            <Link to={"/posts"}>My Posts</Link>
+            <NavLink to={"/posts"} style={{ textDecoration: "none" }}>
+              My Posts
+            </NavLink>
           </button>
         </li>
       </ul>
