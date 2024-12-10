@@ -1,7 +1,9 @@
 export default function MyPosts() {
   return (
     <>
-      <main>My Posts</main>
+      <main>
+        <h1>My Posts</h1>
+      </main>
     </>
   );
 }
