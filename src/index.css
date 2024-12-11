@@ -33,8 +33,9 @@ ul > li {
 }
 
 .card-post {
+  position: relative;
   width: 250px;
-  height: 400px;
+  height: 450px;
   padding: 0.5rem;
   margin: 1rem;
 
@@ -52,4 +53,20 @@ ul > li {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1.5rem;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  left: calc(125px - 38.925px);
+}
+
+/* ShowProduct.jsx */
+.product-selected-container {
+  text-align: center;
+}
+
+.post-selected-container {
+  display: flex;
+  justify-content: center;
 }

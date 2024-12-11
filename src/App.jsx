@@ -6,6 +6,7 @@ import DefaultLayout from "./components/DefaultLayout/DefaultLayout";
 import HomePage from "./components/HomePage";
 import AboutUs from "./components/AboutUs";
 import MyPosts from "./components/MyPosts";
+import ShowProduct from "./components/ShowProduct/ShowProduct";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index Component={HomePage} />
           <Route path="/about" Component={AboutUs} />
           <Route path="/posts" Component={MyPosts} />
+          <Route path="/posts/:id" Component={ShowProduct} />
         </Route>
       </Routes>
     </BrowserRouter>
