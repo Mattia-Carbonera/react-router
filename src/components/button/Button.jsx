@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Button({ id }) {
+export default function Button({ id, onClickFunction }) {
   //   console.log(id);
   return (
     <div className="button-card">
@@ -8,13 +8,16 @@ export default function Button({ id }) {
         Mostra
       </Link>
 
-      {/* <button
+      <button
+        id={id}
+        type="button"
         className="btn btn-danger"
         data-bs-toggle="modal"
-        data-bs-target={`#delete-modal-${id}`}
+        data-bs-target="#delete"
+        onClick={onClickFunction}
       >
         Elimina
-      </button> */}
+      </button>
     </div>
   );
 }

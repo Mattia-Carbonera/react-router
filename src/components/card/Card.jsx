@@ -1,6 +1,6 @@
 import Button from "../button/Button";
 
-export default function Card({ id, image, title, content }) {
+export default function Card({ id, image, title, content, onClickFunction }) {
   //   console.log(id);
   return (
     <>
@@ -15,7 +15,7 @@ export default function Card({ id, image, title, content }) {
           </div>
         </div>
         <div className="button-container py-3">
-          <Button id={id} />
+          <Button id={id} onClickFunction={onClickFunction} />
         </div>
       </div>
     </>

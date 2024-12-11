@@ -21,6 +21,13 @@ export default function MyPosts() {
     postsFetch();
   }, []);
 
+  //   gestisco il click dei bottoni per la modal
+  const [selectedPostModal, setSelectedPostModal] = useState();
+  const handlerModalButton = (e) => {
+    setSelectedPostModal(e.target.id);
+  };
+  //   console.log(selectedPostModal);
+
   return (
     <>
       <main>
@@ -34,6 +41,7 @@ export default function MyPosts() {
                 title={post.title}
                 content={post.content}
                 image={post.image}
+                onClickFunction={handlerModalButton}
               />
             ))}
           </div>
@@ -62,7 +70,7 @@ export default function MyPosts() {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className="modal-body">...</div>
+              <div className="modal-body">Post numero {selectedPostModal}</div>
               <div className="modal-footer">
                 <button
                   type="button"
@@ -78,18 +86,6 @@ export default function MyPosts() {
             </div>
           </div>
         </div>
-
-        {/* <div className="modal-dialog modal-dialog-centered" id="delete-modal">
-          ...
-        </div> */}
-        <button
-          type="button"
-          className="btn btn-danger"
-          data-bs-toggle="modal"
-          data-bs-target="#delete"
-        >
-          Elimina
-        </button>
       </main>
     </>
   );
