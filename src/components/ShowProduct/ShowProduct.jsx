@@ -21,6 +21,15 @@ export default function ShowProduct() {
     singlePostFetch();
   }, []);
 
+  //   console.log(selectedPost);
+
+  //   const { title, content, image, tags } = selectedPost[0];
+  console.log(selectedPost[0]);
+  //   console.log(title);
+  //   console.log(content);
+  //   console.log(image);
+  //   console.log(tags);
+
   return (
     <div className="product-selected-container">
       <h1>{`card numero: ${id}`}</h1>
