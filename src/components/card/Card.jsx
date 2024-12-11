@@ -16,7 +16,7 @@ export default function Card({ id, image, title, content, onClickFunction }) {
           </div>
         </div>
         <div className="button-container py-3">
-          <Button id={id} onClickFunction={onClickFunction} />
+          <Button id={id} onClickFunction={onClickFunction} name={title} />
         </div>
       </div>
     </>

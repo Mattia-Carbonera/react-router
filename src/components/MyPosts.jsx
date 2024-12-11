@@ -23,9 +23,12 @@ export default function MyPosts() {
 
   //   gestisco il click dei bottoni per la modal
   const [selectedPostModal, setSelectedPostModal] = useState();
+  const [selectedPostModalName, setSelectedPostModalName] = useState("");
   const handlerModalButton = (e) => {
     setSelectedPostModal(e.target.id);
+    setSelectedPostModalName(e.target.name);
     console.log(e.target.id);
+    console.log(e.target.name);
   };
 
   //   gestisco eliminazione pizza
@@ -86,7 +89,8 @@ export default function MyPosts() {
                 ></button>
               </div>
               <div className="modal-body">
-                Sei sicuro di voler eliminare l'elemento?
+                Sei sicuro di voler eliminare l'elemento "
+                {selectedPostModalName}"?
               </div>
               <div className="modal-footer">
                 <button
