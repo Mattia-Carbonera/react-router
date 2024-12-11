@@ -33,7 +33,10 @@ ul > li {
 }
 
 .card-post {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   width: 250px;
   height: 450px;
   padding: 0.5rem;
@@ -56,9 +59,15 @@ ul > li {
 }
 
 .button-container {
-  position: absolute;
-  bottom: 0;
-  left: calc(125px - 38.925px);
+  display: flex;
+  width: 100%;
+}
+
+/* Button.jsx */
+.button-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* ShowProduct.jsx */
