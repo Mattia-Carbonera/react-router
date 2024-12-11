@@ -11,7 +11,7 @@ export default function ShowProduct() {
     fetch(serverHosting).then((res) =>
       res.json().then((data) => {
         const postsArray = data[1];
-        const postFiltered = postsArray.filter((post) => post.id == id);
+        const postFiltered = postsArray.find((post) => post.id == id);
         setSelectedPost(postFiltered);
       })
     );
@@ -23,22 +23,19 @@ export default function ShowProduct() {
 
   //   console.log(selectedPost);
 
-  //   const { title, content, image, tags } = selectedPost[0];
-  console.log(selectedPost[0]);
-  //   console.log(title);
-  //   console.log(content);
-  //   console.log(image);
-  //   console.log(tags);
+  const { title, content, image, tags } = selectedPost;
+
+  console.log(tags);
 
   return (
-    <div className="product-selected-container">
-      <h1>{`card numero: ${id}`}</h1>
-      <div className="post-selected-container">
-        <div className="selected-item">
-          <img src="" alt="" />
-          <h2>Title</h2>
-          <p>Content</p>
-          <span>Tags</span>
+    <div className="container">
+      <div className="selected-item">
+        <h2>Hai selezionato il post umero {id}</h2>
+        <div className="selected-item-content">
+          <img src={image} alt="" />
+          <h2>{title}</h2>
+          <p>{content}</p>
+          <span>{tags}</span>
         </div>
       </div>
     </div>
