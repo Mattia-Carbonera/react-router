@@ -56,7 +56,7 @@ export default function MyPosts() {
                 title={post.title}
                 content={post.content}
                 image={post.image}
-                onClickFunction={() => handleDeletePost(post.id)}
+                onClickFunction={handlerModalButton}
               />
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function MyPosts() {
             <div className="modal-content">
               <div className="modal-header">
                 <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                  Sei sicuri di voler eliminare l'elemento?
+                  Elimina
                 </h1>
                 <button
                   type="button"
@@ -85,17 +85,24 @@ export default function MyPosts() {
                   aria-label="Close"
                 ></button>
               </div>
-              <div className="modal-body">Post numero {selectedPostModal}</div>
+              <div className="modal-body">
+                Sei sicuro di voler eliminare l'elemento?
+              </div>
               <div className="modal-footer">
                 <button
                   type="button"
                   className="btn btn-secondary"
                   data-bs-dismiss="modal"
                 >
-                  Close
+                  Chiudi
                 </button>
-                <button type="button" className="btn btn-primary">
-                  Understood
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-bs-dismiss="modal"
+                  onClick={() => handleDeletePost(selectedPostModal)}
+                >
+                  Elimina
                 </button>
               </div>
             </div>
