@@ -9,6 +9,7 @@ export default function Card({ id, image, title, content, onClickFunction }) {
           <div className="card-image">
             <img src={image} alt="" />
           </div>
+          <span>{id}</span>
           <div className="content">
             <h3>{title}</h3>
             <span>{content}</span>

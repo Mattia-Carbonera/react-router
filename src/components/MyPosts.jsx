@@ -25,8 +25,23 @@ export default function MyPosts() {
   const [selectedPostModal, setSelectedPostModal] = useState();
   const handlerModalButton = (e) => {
     setSelectedPostModal(e.target.id);
+    console.log(e.target.id);
   };
-  //   console.log(selectedPostModal);
+
+  //   gestisco eliminazione pizza
+  const fetchDeletePost = (id) => {
+    fetch(`${serverHosting}${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then(() => {
+        postsFetch();
+      });
+  };
+
+  const handleDeletePost = (id) => {
+    fetchDeletePost(id);
+  };
 
   return (
     <>
@@ -41,14 +56,14 @@ export default function MyPosts() {
                 title={post.title}
                 content={post.content}
                 image={post.image}
-                onClickFunction={handlerModalButton}
+                onClickFunction={() => handleDeletePost(post.id)}
               />
             ))}
           </div>
         </div>
 
+        {/* modal */}
         <div
-          // key={post.id}
           className="modal fade"
           id="delete"
           data-bs-backdrop="static"
